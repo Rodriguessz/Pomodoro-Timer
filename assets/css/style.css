@@ -1,0 +1,311 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+:root{
+
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+
+    /* CSS Variables */
+    --main-color:#323238;
+    --main-bg-color: #fff;
+    --main-bg-sound: #E1E1E6;
+    --main-bg-act-sound: #02799D;
+    --main-color-act: #fff;
+
+    --second-bg-sound: #cacace;
+    --second-bg-act-sound: #0f708d;
+
+}
+
+.sr-only{
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+     overflow: hidden;
+
+    margin:-1px;
+    padding: 0;
+    appearance: none;
+
+}
+
+i{
+    pointer-events: none;
+}
+
+
+html.running button.ph-play-circle, html.running button.ph-timer, html:not(.running) button.ph-pause-circle, html:not(.running) button.ph-plus-circle, html:not(.running) button.ph-minus-circle, html:not(.dark) i.ph-sun, html.dark i.ph-moon {
+    display: none;
+}
+
+html.dark div.clock span, html.dark button.toggle-mode, html.dark 
+div.controls button{
+    
+    color: var(--main-color-act);
+    
+}
+
+
+html.dark body{
+    background-color: var(--main-color);
+}
+
+html.dark section.btn-sound div{
+    background-color: var(--second-bg-sound);
+}
+
+html.dark section.btn-sound div.active{
+    background-color: var(--second-bg-act-sound);
+}
+
+
+
+
+
+
+body{
+    display: grid;
+    place-items: center;
+
+    height: 100vh;
+    font-size: 1.6rem;
+
+    overflow-y: hidden;
+
+    transition: background-color 0.5s ease;
+
+    background-color: var(--main-bg-color);
+}
+
+
+
+
+#app{
+    
+    /* min-width: 32rem; */
+    height: 100%;
+
+    padding: 2rem;
+
+
+    /* background-color: bisque; */
+
+    
+    
+}
+
+button.toggle-mode{
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+
+    border: none;
+    background: none;
+
+    font-size: clamp(2.6rem, 2vw + 2rem, 3.2rem);
+    
+    cursor: pointer;
+
+    color: var(--main-color);
+
+}
+
+button.toggle-mode.hidden{
+  display: none;
+}
+
+
+
+main{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    /* place-items: center; */
+
+}
+
+
+main section.timer{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+
+div.clock{
+    display: flex;
+    justify-content: center;
+}
+
+
+div.clock span{
+    flex-direction: column;
+    font-size: clamp(2.4rem, 2vw + 10rem, 12rem);
+    color: var(--main-color);
+    font-weight: 500;
+
+    transition: color 0.5s ease;
+}
+
+div.controls{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div.controls button{
+    
+    border: none;
+    background: none;
+    color: var(--main-color);
+
+    font-size: clamp(4rem, 2vw + 2rem, 4.8em);
+
+    cursor: pointer;
+}
+
+
+section.btn-sound{
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+    
+}
+
+section.btn-sound div{
+    font-size: clamp(3.2rem, 2vw + 2rem, 4.2rem);
+    color: var(--main-color);
+    width: 38%;
+    height: 38%;
+    background-color: var(--main-bg-sound);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 2.4rem;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+section.btn-sound div:hover{
+    transform: scale(1.1);
+    background-color: var(--main-bg-act-sound);
+    color: var(--main-color-act);
+}
+
+html.dark section.btn-sound div:hover{
+    transform: scale(1.1);
+    background-color: var(--second-bg-act-sound);
+    color: var(--main-color-act);
+}
+
+section.btn-sound div.active{
+    background-color: var(--main-bg-act-sound);
+    color: var(--main-color-act);
+}
+
+
+div.error-message{
+    width: 100%;
+   
+    height: 4rem;
+    background-color: rgb(201, 146, 146);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+
+
+    transition: 1s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+
+    
+    
+    
+}
+
+div.error-message.open{
+    transform: translateY(0%);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+   main{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    height: 100vh;
+    align-items: center;
+    gap: 16rem;
+   }
+
+   div.controls{
+    gap: 3.2rem;
+    
+}
+
+
+   section.btn-sound{
+    
+   
+    gap: 3.2rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+    
+
+    
+}
+
+section.btn-sound div{
+
+       height: 14rem;
+    
+    
+
+}
+}
+
+@keyframes dropError {
+    
+    0%{
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+}  
+
+

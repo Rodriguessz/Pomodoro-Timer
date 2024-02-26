@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="./src/main.js" defer></script>
+    <title>Focus timer 2.0</title>
+</head>
+<body>
+    <div class="error-message">
+        <p></p>
+    </div>
+
+    <div id="app">
+        
+     
+        <main>
+
+            <button class="toggle-mode">
+                <span class="sr-only">Ativar light mode!</span>
+                <i class="ph ph-sun"></i>
+                <i class="ph ph-moon"></i>
+            </button>
+            
+
+            <section class="timer">
+                <div class="clock">
+                    <span id="timerMinutes">00</span>
+                    <span>:</span>
+                    <span id="timerSeconds">00</span>
+                </div>
+
+                <div class="controls">
+
+                    <button class="ph ph-play-circle control" data-action="toggleTimer">
+                        <span class="sr-only" >Iniciar timer</span>
+                    </button>
+
+                    <button class="ph ph-pause-circle control"  data-action="toggleTimer">
+                        <span class="sr-only">Pausar timer</span>
+                    </button>
+
+                    <button class="ph ph-timer control" data-action="setTime">
+                        <span class="sr-only control" >Inserir tempo</span>
+                    </button>
+
+                    <button class="ph ph-stop-circle control" data-action="resetTimer">
+                        <span class="sr-only control" >Resetar timer</span>
+                    </button>
+
+                    <button class="ph ph-plus-circle control" data-action="plusTime">
+                        <span class="sr-only" >Adicionar tempo ao timer</span>
+                    </button>
+
+                    <button class="ph ph-minus-circle control" data-action="minusTime">
+                        <span class="sr-only" >Dimunir tempo ao timer</span>
+                    </button>
+                   
+                </div>
+            </section>
+
+            <section class="btn-sound">
+
+                <div class="sound florest" data-action="sound1">
+                    <span class="sr-only">Ativar Interstellar soundtrack</span>
+                    <i class="ph ph-planet"></i>
+                </div>
+                
+                <div class="sound rain" data-action="sound2">
+                    <span class="sr-only">Ativar Oppeiheimer Soundtrack</span>
+                    <i class="ph ph-atom"></i>
+                </div>
+
+                <div class="sound coffee" data-action="sound3">
+                    <span class="sr-only">Ativar lofi para estudos</span>
+                    <i class="ph ph-books"></i>
+                </div>
+                
+                <div class="sound lareira" data-action="sound4">
+                    <span class="sr-only">Ativar som de chuva</span>
+                    <i class="ph ph-cloud-rain"></i>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>
