@@ -8,7 +8,7 @@ Um Pomodoro Timer criado com JavaScript, HTML e CSS. Este timer inclui funcional
 
 Insira uma captura de tela do seu aplicativo ou um link para um protótipo online:
 
-![Captura de Tela](link-da-imagem-exemplo.png)
+![Captura de Tela](pomodoroTimer.png)
 
 Você pode acessar o protótipo [aqui](https://rodriguessz.github.io/Pomodoro-Timer/).
 
