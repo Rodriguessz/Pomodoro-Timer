@@ -10,7 +10,7 @@ Insira uma captura de tela do seu aplicativo ou um link para um protótipo onlin
 
 ![Captura de Tela](link-da-imagem-exemplo.png)
 
-Você pode acessar o protótipo [aqui](link-do-prototipo-online).
+Você pode acessar o protótipo [aqui](https://rodriguessz.github.io/Pomodoro-Timer/).
 
 ## Índice
 
